@@ -17,22 +17,22 @@ sorry的java版本 操作演示
 
 # 安装步骤
 
-### docker (推荐)
-首先安装 docker,不会的安装请自行百度
+## docker (推荐)
+首先安装 docker
 
-
-clone代码
+### clone代码
 	
-	git clone https://github.com/li24361/sorryJava.git
+`git clone https://github.com/li24361/sorryJava.git` 
 	
 后,进入到sorry-java目录下执行
 
-    docker build -t sorry-java:v1.4 .
-    docker run --rm -itd --name sorryjava -e QCLOUD_ENABLE=false  -p 8888:8888 sorry-java:v1.4
+1. mvn install
+2. docker build -t sorry-java:v1.4 . 
+3. docker run --rm -itd --name sorryjava -e QCLOUD_ENABLE=false  -p 8888:8888 sorry-java:v1.4
 
- 访问 http://localhost;8888   
+### 访问 http://localhost:8888   
 
-### centos 
+## centos 
 
 如果没有自己的服务器，可以去[腾讯云](https://cloud.tencent.com/redirect.php?redirect=1005&cps_key=886212e8dd391ab808f37dd99caa8afb)
 里面个人可以免费申请7天的服务器，如果你是学生，会有更大的惊喜。现在[双十一搞活动](https://cloud.tencent.com/act/double11/reserve?fromSource=gwzcw.3000744.3000744.3000744&utm_medium=cpc&utm_id=gwzcw.3000744.3000744.3000744&from=console&cps_key=886212e8dd391ab808f37dd99caa8afb&spread_hash_key=RfuqSZ)，88一年，很划算。
@@ -42,11 +42,12 @@ clone代码
 
 centOS7下ffmpeg安装
 
-	yum install epel-release -y
-	rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
-	rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
-    yum install ffmpeg ffmpeg-devel -y
-
+```bash
+yum install epel-release -y
+rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
+rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+yum install ffmpeg ffmpeg-devel -y
+```
 
 centOS7安装字体,生成中文字幕需要，否则生成时候会报错
 
@@ -94,7 +95,17 @@ windows下执行压制的时候，如果ass的路径是带有盘符的，会报�
 访问 http://ip:8888
 	
 ### macos
-通过brew安装ffmpeg
+
+#### install macPorts
+
+Congratulations, you have successfully installed the MacPorts system. To get the Portfiles and update the system, add /opt/local/bin to your PATH and run:
+
+sudo port -v selfupdate
+
+
+
+
+#### 通过brew安装ffmpeg
   
 	brew install ffmpeg
 
